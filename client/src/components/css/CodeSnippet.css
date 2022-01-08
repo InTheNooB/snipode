@@ -1,0 +1,67 @@
+:root {
+    --code-snippet-code-height: 450px;
+}
+
+.snippets {
+    gap: 50px 10px;
+}
+
+.code-snippet-container {
+    color: #ffffff;
+    width: 900px;
+    /* box-shadow: 0 3px 6px rgba(255,255,255, 0.16), 0 3px 6px rgba(255,255,255, 0.23); */
+    box-shadow: 0 1px 3px rgba(255, 255, 255, 0.12), 0 1px 2px rgba(255, 255, 255, 0.24);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+    border-radius: 20px;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.code-snippet-title {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+.code-snippet-title h1,
+.code-snippet-title h3 {
+    margin-bottom: 0px;
+    margin-top: 0px;
+    cursor: pointer;
+}
+
+.code-snippet-title h3 {
+    padding-right: 5px;
+}
+
+.code-snippet-title .langage-icon {
+    margin-left: auto;
+}
+
+.code-snippet-description h4 {
+    margin-top: 0;
+    text-align: left;
+    color: #7e7e7e
+}
+
+.code-snippet-code pre div {
+    height: var(--code-snippet-code-height);
+    overflow-y: auto;
+    border-radius: 10px;
+}
+
+.code-snippet-code pre div::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+}
+
+.code-snippet-code pre div::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0);
+    border-radius: 20px
+}
+
+.code-snippet-code pre div::-webkit-scrollbar-thumb {
+    background: #ffffff;
+    border-radius: 20px
+}

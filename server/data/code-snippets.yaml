@@ -1,0 +1,4 @@
+- id: 1
+  title: First code snippet
+  description: There goes the snippet's description. Might support HTML ?
+  language: ruby

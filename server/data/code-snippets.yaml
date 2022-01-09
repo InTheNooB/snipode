@@ -32,6 +32,7 @@
         raise 'Please implement the Attendee#allowed_to_ride? method'
       end
     end
+  color: hsl(280,75%,75%)
 - id: 2
   title: Factorial of a Number Using Recursion
   description: There goes the snippet's description. Might support HTML ?
@@ -52,6 +53,7 @@
                 return 1;
         }
     }
+  color: hsl(192,53%,84%)
 - id: 3
   title: reverse_iterator
   description: There goes the snippet's description. Might support HTML ?
@@ -86,10 +88,11 @@
             std::cout << val << ' ';
         }
     }
+  color: hsl(337,96%,41%)
 - id: 4
   title: HTML Code example
   description: There goes the snippet's description. Might support HTML ?
-  language: html5
+  language: html
   code: |
     <div class="w3-col l3 m6">
      <h3 class="w3-margin-top">Server Side</h3>
@@ -113,11 +116,13 @@
      <a class="w3-bar-item w3-button" href="/cybersecurity/index.php">Cyber Security</a>
      <a class="w3-bar-item w3-button" href="/accessibility/index.php">Accessibility</a>
     </div>
+  color: hsl(4,92%,54%)
 - title: Mon titre
   description: description
   language: javascript
   code: let a = 2;
   id: 5
+  color: hsl(111,65%,89%)
 - title: Normal Swal popup
   description: Popup swal fetching data from a URL
   language: javascript
@@ -145,8 +150,56 @@
       Swal.fire(`Your IP address is ${ipAddress}`)
     }
   id: 6
-- title: Mon titre
-  description: Ma description
-  language: php
-  code: $error = "true";
-  id: 7
+  color: hsl(154,54%,65%)
+- title: Difference between two dates
+  description: ''
+  language: javascript
+  code: |-
+    const date1 = new Date('7/13/2010');
+    const date2 = new Date('12/15/2010');
+    const diffTime = Math.abs(date2 - date1);
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
+    console.log(diffTime + " milliseconds");
+    console.log(diffDays + " days");
+  id: 8
+  color: hsl(114,65%,67%)
+- title: Reverse LinkedList
+  description: Golang Program to reverse a given linked list.
+  language: go
+  code: |-
+    package main
+    import "fmt"
+    type Node struct {
+       value int
+       next *Node
+    }
+    func NewNode(value int, next *Node) *Node{
+       var n Node
+       n.value = value
+       n.next = next
+       return &n
+    }
+    func TraverseLinkedList(head *Node){
+       fmt.Printf("Input Linked List is: ")
+       temp := head
+       for temp != nil {
+          fmt.Printf("%d ", temp.value)
+          temp = temp.next
+       }
+       fmt.Println()
+    }
+    func ReverseLinkedList(head *Node){
+       if head == nil{
+          return
+       }
+       ReverseLinkedList(head.next)
+       fmt.Printf("%d ", head.value)
+    }
+    func main(){
+       head := NewNode(30, NewNode(10, NewNode(40, NewNode(40, nil))))
+       TraverseLinkedList(head)
+       fmt.Printf("Reversal of the input linked list is: ")
+       ReverseLinkedList(head)
+    }
+  id: 11
+  color: hsl(116,47%,75%)

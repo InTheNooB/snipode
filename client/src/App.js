@@ -2,24 +2,11 @@ import './App.css';
 import SearchBar from './components/SearchBar';
 import CodeSnippet from './components/CodeSnippet';
 import Swal from 'sweetalert2'
-import { useState, useEffect } from 'react'; 
+import { useState, useEffect } from 'react';
 
 import Axios from 'axios'
 
 function App() {
-
-  const randomColor = (() => {
-    const randomInt = (min, max) => {
-      return Math.floor(Math.random() * (max - min + 1)) + min;
-    };
-
-    return () => {
-      var h = randomInt(0, 360);
-      var s = randomInt(42, 98);
-      var l = randomInt(40, 90);
-      return `hsl(${h},${s}%,${l}%)`;
-    };
-  })();
 
   const swalPopup = () => {
     return Swal.fire({
@@ -55,10 +42,12 @@ function App() {
       }
     });
   }
+  // Load code snippets
+  const [codeSnippets, setCodeSnippets] = useState([]);
 
   const addCodeSnippet = async () => {
     let data = await swalPopup();
-    if (!data.title || !data.language || !data.code) {
+    if (!data.value.title || !data.value.language || !data.value.code) {
       return;
     }
     Axios.post("/api/addCodeSnippet", data.value).then((res) => {
@@ -68,20 +57,13 @@ function App() {
     });
   }
 
-  // Load code snippets
-  const [codeSnippets, setCodeSnippets] = useState([]);
 
   useEffect(() => {
     fetch("/api/getCodeSnippets")
       .then((res) => res.json())
       .then((data) => {
         if (data.result === "OK") {
-          setCodeSnippets(data.codeSnippets.map(codeSnippet => {
-            return {
-              ...codeSnippet,
-              color: randomColor()
-            }
-          }));
+          setCodeSnippets(data.codeSnippets);
         }
       });
   }, []);

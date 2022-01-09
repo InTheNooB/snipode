@@ -28,6 +28,7 @@ const copyCode = ((code) => {
     })
 });
 
+
 const CodeSnippet = ({ codeSnippet }) => {
     return (
         <div className='code-snippet-container'>
@@ -35,7 +36,7 @@ const CodeSnippet = ({ codeSnippet }) => {
                 <h3 onClick={() => copyCode(codeSnippet.code)}><i>#{codeSnippet.id}</i></h3>
                 <h1 onClick={() => copyCode(codeSnippet.code)} style={{ color: codeSnippet.color }}>{codeSnippet.title}</h1>
                 {/* <i class={`devicon-${codeSnippet.language}-plain`}></i> */}
-                <img src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${codeSnippet.language}/${codeSnippet.language}-plain.svg`} alt="logo" />
+                <img src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${codeSnippet.language}/${codeSnippet.language}-plain.svg`} onError={"this.style.display='none'"} alt="" />
             </div>
             <div className='code-snippet-description'>
                 <h4><i>{codeSnippet.description}</i></h4>

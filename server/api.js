@@ -9,33 +9,32 @@ const PATHS = {
 
 const getCodeSnippets = () => {
     try {
-        let codeSnippets = yaml.load(fs.readFileSync(PATHS.CODE_SNIPPETS, 'utf8')) ?? [];
-        codeSnippets = codeSnippets.map((codeSnippet) => {
-            // console.log(Buffer.from(codeSnippet.code, 'base64').toString());
-            return {
-                ...codeSnippet,
-                code: fs.readFileSync(`${PATHS.DATA}/${codeSnippet.id}.txt`, 'utf8') ?? ""
-                // code: Buffer.from(codeSnippet.code, 'base64').toString()
-                // code : `var express = require('express');
-                // var app = express();
-
-                // app.get('/', function (req, res) {
-                //    res.send('Hello World');
-                // })
-
-                // var server = app.listen(8081, function () {
-                //    var host = server.address().address
-                //    var port = server.address().port
-
-                //    console.log("Example app listening at http://%s:%s", host, port)
-                // })`
-            }
-        })
-        return codeSnippets;
+        return yaml.load(fs.readFileSync(PATHS.CODE_SNIPPETS, 'utf8'));
     } catch (e) {
         console.log(e);
-        return [];
+        return null;
     }
 };
 
-module.exports = { getCodeSnippets }
+const addCodeSnippet = (data) => {
+    let codeSnippets = getCodeSnippets() ?? [];
+
+    // Calculates the max index and adds it to the new snippet
+    data['id'] = codeSnippets.reduce((acc, current) => {
+        return current.id > acc ? current.id : acc;
+    }, 0) + 1;
+
+    // Add the snippet to the list
+    codeSnippets.push(data);
+
+    try {
+        // Writes the list back into the file
+        fs.writeFileSync(PATHS.CODE_SNIPPETS, yaml.dump(codeSnippets), 'utf8');
+        // sendRegistrationConfirmationEmail(newTeam);
+        return true;
+    } catch (error) {
+        return false;
+    }
+};
+
+module.exports = { getCodeSnippets, addCodeSnippet }

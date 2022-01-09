@@ -2,3 +2,151 @@
   title: First code snippet
   description: There goes the snippet's description. Might support HTML ?
   language: ruby
+  code: |
+    class Attendee
+      def initialize(height)
+        @height = height
+      end
+
+      def issue_pass!(pass_id)
+        @pass_id = pass_id
+      end
+
+      def revoke_pass!
+        @pass_id = nil
+      end
+
+      # Do not edit above methods, add your own methods below. # Do not edit above methods, add your own methods below. # Do not edit above methods, add your own methods below. # Do not edit above methods, add your own methods below. # Do not edit above methods, add your own methods below. # Do not edit above methods, add your own methods below.
+
+      # rubocop:disable Naming/PredicateName
+      def has_pass?
+        raise 'Please implement the Attendee#haspass? method'
+      end
+      # rubocop:enable Naming/PredicateName
+
+      def fits_ride?(ride_minimum_height)
+        raise 'Please implement the Attendee#fits_ride? method'
+      end
+
+      def allowed_to_ride?(ride_minimum_height)
+        raise 'Please implement the Attendee#allowed_to_ride? method'
+      end
+    end
+- id: 2
+  title: Factorial of a Number Using Recursion
+  description: There goes the snippet's description. Might support HTML ?
+  language: java
+  code: |
+    public class Factorial {
+
+        public static void main(String[] args) {
+            int num = 6;
+            long factorial = multiplyNumbers(num);
+            System.out.println("Factorial of " + num + " = " + factorial);
+        }
+        public static long multiplyNumbers(int num)
+        {
+            if (num >= 1)
+                return num * multiplyNumbers(num - 1);
+            else
+                return 1;
+        }
+    }
+- id: 3
+  title: reverse_iterator
+  description: There goes the snippet's description. Might support HTML ?
+  language: cplusplus
+  code: |
+    #include <iostream> #include <iterator>
+    template<typename T, size_t SIZE> class Stack {
+        T arr[SIZE];
+        size_t pos = 0;
+    public:
+        T pop() {
+            return arr[--pos];
+        }
+        Stack& push(const T& t) {
+            arr[pos++] = t;
+            return *this;
+        }
+        // we wish that looping on Stack would be in LIFO order
+        // thus we use std::reverse_iterator as an adaptor to existing iterators
+        // (which are in this case the simple pointers: [arr, arr+pos)
+        auto begin() {
+            return std::reverse_iterator(arr + pos);
+        }
+        auto end() {
+            return std::reverse_iterator(arr);
+        }
+    };
+    int main() {
+        Stack<int, 8> s;
+        s.push(5).push(15).push(25).push(35);
+        for(int val: s) {
+            std::cout << val << ' ';
+        }
+    }
+- id: 4
+  title: HTML Code example
+  description: There goes the snippet's description. Might support HTML ?
+  language: html5
+  code: |
+    <div class="w3-col l3 m6">
+     <h3 class="w3-margin-top">Server Side</h3>
+     <a class="w3-bar-item w3-button" href="/sql/default.asp">Learn SQL</a>
+     <a class="w3-bar-item w3-button" href="/mysql/default.asp">Learn MySQL</a>
+     <a class="w3-bar-item w3-button" href="/php/default.asp">Learn PHP</a>
+     <a class="w3-bar-item w3-button" href='/asp/default.asp'>Learn ASP</a>
+     <a class="w3-bar-item w3-button" href='/nodejs/default.asp'>Learn Node.js</a>
+     <a class="w3-bar-item w3-button" href='/nodejs/nodejs_raspberrypi.asp'>Learn Raspberry Pi</a>
+     <a class="w3-bar-item w3-button" href='/git/default.asp'>Learn Git</a>
+
+     <h3 class="w3-margin-top">Web Building</h3>
+     <a class="w3-bar-item w3-button" href="https://www.w3schools.com/spaces" target="_blank" onclick="ga('send', 'event', 'spacesFromTutorialsAcc', 'click');" title="Get Your Own Website With W3schools Spaces">Create a Website <span class="ribbon-topnav ws-yellow">NEW</span></a>
+     <a class="w3-bar-item w3-button" href="/w3css/w3css_templates.asp">Web Templates</a>
+     <a class="w3-bar-item w3-button" href="/browsers/default.asp">Web Statistics</a>
+     <a class="w3-bar-item w3-button" href="/cert/default.asp">Web Certificates</a>
+     <a class="w3-bar-item w3-button" href="/whatis/default.asp">Web Development</a>
+     <a class="w3-bar-item w3-button" href='/tryit/default.asp'>Code Editor</a>
+     <a class="w3-bar-item w3-button" href="/typingspeed/default.asp">Test Your Typing Speed</a>
+     <a class="w3-bar-item w3-button" href="/codegame/index.html" target="_blank">Play a Code Game</a>
+     <a class="w3-bar-item w3-button" href="/cybersecurity/index.php">Cyber Security</a>
+     <a class="w3-bar-item w3-button" href="/accessibility/index.php">Accessibility</a>
+    </div>
+- title: Mon titre
+  description: description
+  language: javascript
+  code: let a = 2;
+  id: 5
+- title: Normal Swal popup
+  description: Popup swal fetching data from a URL
+  language: javascript
+  code: |-
+    const ipAPI = '//api.ipify.org?format=json'
+
+    const inputValue = fetch(ipAPI)
+      .then(response => response.json())
+      .then(data => data.ip)
+
+    const { value: ipAddress } = await Swal.fire({
+      title: 'Enter your IP address',
+      input: 'text',
+      inputLabel: 'Your IP address',
+      inputValue: inputValue,
+      showCancelButton: true,
+      inputValidator: (value) => {
+        if (!value) {
+          return 'You need to write something!'
+        }
+      }
+    })
+
+    if (ipAddress) {
+      Swal.fire(`Your IP address is ${ipAddress}`)
+    }
+  id: 6
+- title: Mon titre
+  description: Ma description
+  language: php
+  code: $error = "true";
+  id: 7

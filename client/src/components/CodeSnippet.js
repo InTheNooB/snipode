@@ -1,11 +1,10 @@
 import './css/CodeSnippet.css';
 import ReactMarkdown from 'react-markdown';
-import DevIcon from "devicon-react-svg";
-import Swal from 'sweetalert2'
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-import { materialDark } from 'react-syntax-highlighter/dist/esm/styles/prism'
+// import DevIcon, { iconList } from "devicon-react-svg";
+import Swal from 'sweetalert2';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { materialDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
-// const MySwal = withReactContent(Swal);
 
 const Toast = Swal.mixin({
     toast: true,
@@ -19,20 +18,9 @@ const Toast = Swal.mixin({
     }
 })
 
-const randomColor = (() => {
-    const randomInt = (min, max) => {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-    };
-
-    return () => {
-        var h = randomInt(0, 360);
-        var s = randomInt(42, 98);
-        var l = randomInt(40, 90);
-        return `hsl(${h},${s}%,${l}%)`;
-    };
-})();
 
 const copyCode = ((code) => {
+    code = code.replace("~~~\n", "").replace("\n~~~", "");
     navigator.clipboard.writeText(code);
     Toast.fire({
         icon: 'success',
@@ -40,25 +28,33 @@ const copyCode = ((code) => {
     })
 });
 
+const renderIcon = (language) => {
+
+    // try {
+    //     return iconList.includes(language) ?
+    //     <DevIcon className='language-icon' icon={language} style={{ fill: 'white', width: '50px' }} /> :
+    //     <p>{language}</p>
+    // } catch (e) {
+    //     console.log(e);
+    // }
+}
+
 
 const CodeSnippet = ({ codeSnippet }) => {
-
-    console.log(codeSnippet.code);
-
-    console.log(codeSnippet.code);
     return (
         <div className='code-snippet-container'>
             <div className='code-snippet-title'>
                 <h3 onClick={() => copyCode(codeSnippet.code)}><i>#{codeSnippet.id}</i></h3>
-                <h1 onClick={() => copyCode(codeSnippet.code)}>{codeSnippet.title}</h1>
-                <DevIcon className='langage-icon' icon={codeSnippet.language} style={{ fill: randomColor(), width: '50px' }} />
+                <h1 onClick={() => copyCode(codeSnippet.code)} style={{ color: codeSnippet.color }}>{codeSnippet.title}</h1>
+                {/* <i class={`devicon-${codeSnippet.language}-plain`}></i> */}
+                <img src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${codeSnippet.language}/${codeSnippet.language}-plain.svg`} alt="logo" />
             </div>
             <div className='code-snippet-description'>
                 <h4><i>{codeSnippet.description}</i></h4>
             </div>
             <div className='code-snippet-code'>
                 <ReactMarkdown
-                    children={codeSnippet.code}
+                    children={`~~~\n${codeSnippet.code}\n~~~`}
                     components={{
                         code({ node, inline, className, children, ...props }) {
                             return !inline && codeSnippet.language !== undefined ? (

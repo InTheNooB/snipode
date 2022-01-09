@@ -35,8 +35,16 @@
     padding-right: 5px;
 }
 
-.code-snippet-title .langage-icon {
+.code-snippet-title svg,
+.code-snippet-title span,
+.code-snippet-title p,
+.code-snippet-title img {
     margin-left: auto;
+}
+
+.code-snippet-title img {
+    width: 3.5em;
+    filter: brightness(0) saturate(100%) invert(1);
 }
 
 .code-snippet-description h4 {
@@ -64,4 +72,8 @@
 .code-snippet-code pre div::-webkit-scrollbar-thumb {
     background: #ffffff;
     border-radius: 20px
+}
+
+.code-snippet-code pre div::-webkit-scrollbar-corner {
+    display: none;
 }

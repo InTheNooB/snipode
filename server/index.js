@@ -4,6 +4,7 @@ const api = require('./api.js');
 
 const port = 3001;
 var app = express();
+app.use(express.json());
 
 
 // Have Node serve the files for our built React app
@@ -15,8 +16,35 @@ app.get("/api", (req, res) => {
 });
 
 app.get("/api/getCodeSnippets", (req, res) => {
-  res.json({ result: "OK", codeSnippets: api.getCodeSnippets() });
+  let codeSnippets = api.getCodeSnippets();
+  if (codeSnippets) {
+    res.json({ result: "OK", codeSnippets: api.getCodeSnippets() });
+  } else {
+    res.json({ result: "KO" });
+  }
 })
+
+app.post("/api/addCodeSnippet", (req, res) => {
+  new Promise((resolve) => {
+    if (req.body) {
+      let requestStatus = api.addCodeSnippet(req.body);
+      if (requestStatus) {
+        resolve(api.getCodeSnippets());
+      } else {
+        resolve(null);
+      }
+    } else {
+      resolve(null);
+    }
+  }).then((codeSnippets) => {
+    if (codeSnippets != null) {
+      res.json({ result: "OK", codeSnippets: codeSnippets });
+    } else {
+      res.json({ result: "KO" });
+    }
+  });
+});
+
 
 // All other GET requests not handled before will return our React app
 app.get('*', (req, res) => {
@@ -24,6 +52,6 @@ app.get('*', (req, res) => {
 });
 
 
-let server = app.listen(port, function() {
+let server = app.listen(port, function () {
   console.log("Example app listening at http://localhost:" + port)
 });

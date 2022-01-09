@@ -26,16 +26,16 @@ The snippets are stored server-side inside a **YAML** file
 
 ```yaml
 -   id:  1
-	title: First code snippet
-	description: There goes the snippet's description. Might support HTML ?
-	language: javascript
-	code:  let a = "abc";
-	color: hsl(154,54%,65%)
+title: First code snippet
+description: There goes the snippet's description. Might support HTML ?
+language: javascript
+code:  let a = "abc";
+color: hsl(154,54%,65%)
 -   id:  2
-	title: Second code snippet
-	description:
-	language: javascript
-	code:  let a = "abc";
-	color: hsl(23,44%,85%)
+title: Second code snippet
+description:
+language: javascript
+code:  let a = "abc";
+color: hsl(23,44%,85%)
 
 ```

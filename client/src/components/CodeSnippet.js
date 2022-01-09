@@ -28,18 +28,6 @@ const copyCode = ((code) => {
     })
 });
 
-const renderIcon = (language) => {
-
-    // try {
-    //     return iconList.includes(language) ?
-    //     <DevIcon className='language-icon' icon={language} style={{ fill: 'white', width: '50px' }} /> :
-    //     <p>{language}</p>
-    // } catch (e) {
-    //     console.log(e);
-    // }
-}
-
-
 const CodeSnippet = ({ codeSnippet }) => {
     return (
         <div className='code-snippet-container'>

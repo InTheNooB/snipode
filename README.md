@@ -1,6 +1,6 @@
 #  Snipode
 
-Snipode *`Snippet Code`* is a web plateforme that allows visitors to access and store code snippets.
+Snipode *`Snippet Code`* is a web plateform that allows visitors to access and store code snippets.
 ![name](https://i.ibb.co/7QyPKV8/Capture-d-cran-2022-01-09-172122.png)
 
 ## Installation

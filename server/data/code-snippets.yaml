@@ -1,7 +1,9 @@
 - id: 1
-  title: First code snippet
-  description: There goes the snippet's description. Might support HTML ?
-  language: ruby
+  title: First code snippetttttt
+  description: >-
+    There goes the snippet's description. Might support HTML ? There goes the
+    snippet's description. Might support HTML ?
+  language: python
   code: |
     class Attendee
       def initialize(height)
@@ -92,7 +94,7 @@
 - id: 4
   title: HTML Code example
   description: There goes the snippet's description. Might support HTML ?
-  language: html
+  language: python
   code: |
     <div class="w3-col l3 m6">
      <h3 class="w3-margin-top">Server Side</h3>
@@ -241,3 +243,381 @@
     cv2.imwrite('result.png', img_rgb)
   id: 13
   color: hsl(266,72%,74%)
+- title: First css example
+  description: Premier example en CSS
+  language: css
+  code: |-
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    code {
+      font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace;
+    }
+
+    ::-webkit-scrollbar {
+      width: 3px;
+      height: 3px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0);
+      border-radius: 20px
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #ffffff;
+      border-radius: 20px
+    }
+
+    ::-webkit-scrollbar-corner {
+      display: none;
+    }
+  id: 14
+  color: hsl(118,83%,85%)
+- title: and now some C
+  description: some C
+  language: c
+  code: int i = 1
+  id: 15
+  color: hsl(189,58%,40%)
+- title: test
+  description: test
+  language: javascript
+  code: test
+  id: 16
+  color: hsl(145,49%,47%)
+- title: test2
+  description: test2
+  language: javascript
+  code: test2
+  id: 17
+  color: hsl(58,50%,74%)
+- title: test3
+  description: test3
+  language: csharp
+  code: test3
+  id: 18
+  color: hsl(332,80%,41%)
+- title: test4
+  description: test4
+  language: php
+  code: test4
+  id: 19
+  color: hsl(43,51%,85%)
+- title: test5
+  description: test5
+  language: html
+  code: test5
+  id: 20
+  color: hsl(305,88%,48%)
+- title: test6
+  description: test6
+  language: go
+  code: test6
+  id: 21
+  color: hsl(88,74%,64%)
+- title: Java code sample
+  description: Some java random code sample
+  language: java
+  code: |-
+    public class VowelConsonant {
+
+        public static void main(String[] args) {
+
+            char ch = 'i';
+
+            if(ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u' )
+                System.out.println(ch + " is vowel");
+            else
+                System.out.println(ch + " is consonant");
+
+        }
+    }
+  id: 22
+  color: hsl(268,48%,48%)
+- title: PHP Sample Code
+  description: Some random PHP code
+  language: php
+  code: |-
+    <?php
+    $array = array(
+        "foo" => "bar",
+        42    => 24,
+        "multi" => array(
+             "dimensional" => array(
+                 "array" => "foo"
+             )
+        )
+    );
+
+    var_dump($array["foo"]);
+    var_dump($array[42]);
+    var_dump($array["multi"]["dimensional"]["array"]);
+    ?>
+  id: 23
+  color: hsl(100,74%,61%)
+- title: test
+  description: test
+  language: javascript
+  code: asdasd
+  id: 24
+  color: hsl(142,97%,46%)
+- title: asd
+  description: asd
+  language: java
+  code: asd
+  id: 25
+  color: hsl(307,74%,48%)
+- title: hhss
+  description: hhsasd
+  language: html
+  code: asdasd
+  id: 26
+  color: hsl(216,86%,88%)
+- title: '  asd asd'
+  description: 'a ewfwe '
+  language: c
+  code: asd asd asd
+  id: 27
+  color: hsl(345,56%,67%)
+- title: wwdfs
+  description: wdfwdf
+  language: html
+  code: wefwef
+  id: 28
+  color: hsl(79,72%,56%)
+- title: da s
+  description: 'asd '
+  language: go
+  code: s a
+  id: 29
+  color: hsl(135,50%,62%)
+- title: ' t4tht zj'
+  description: j tzh erg
+  language: java
+  code: a sdf wrg er
+  id: 30
+  color: hsl(74,96%,75%)
+- title: grw grt
+  description: h 3wrf we
+  language: c
+  code: asd asd
+  id: 31
+  color: hsl(95,87%,48%)
+- title: g rgre
+  description: ' wrg qwd'
+  language: java
+  code: a sdas d
+  id: 32
+  color: hsl(1,81%,64%)
+- title: ew f
+  description: 'fwr '
+  language: java
+  code: w efwef
+  id: 33
+  color: hsl(69,63%,42%)
+- title: ' df'
+  description: 'dsf '
+  language: c
+  code: ' sdf'
+  id: 34
+  color: hsl(52,63%,89%)
+- title: 'asd '
+  description: as d
+  language: javascript
+  code: 'asd '
+  id: 35
+  color: hsl(65,83%,65%)
+- title: asd as
+  description: 'dasd '
+  language: java
+  code: 'asd '
+  id: 36
+  color: hsl(72,85%,71%)
+- title: le suivant
+  description: la suivante
+  language: go
+  code: asdasd
+  id: 37
+  color: hsl(171,42%,76%)
+- title: test java
+  description: test java
+  language: java
+  code: char a = 'c';
+  id: 38
+  color: hsl(317,85%,58%)
+- title: test c
+  description: test c
+  language: c
+  code: int a = 2
+  id: 39
+  color: hsl(142,66%,79%)
+- title: 'asd '
+  description: 'asd '
+  language: javascript
+  code: 'asd '
+  id: 40
+  color: hsl(178,91%,60%)
+- title: g g
+  description: sdgdsf
+  language: javascript
+  code: sdsaf
+  id: 41
+  color: hsl(239,46%,58%)
+- title: asd
+  description: 'asd '
+  language: javascript
+  code: ASD
+  id: 42
+  color: hsl(96,57%,82%)
+- title: asd
+  description: 'asd '
+  language: javascript
+  code: ASD
+  id: 43
+  color: hsl(307,63%,46%)
+- title: asd
+  description: 'asd '
+  language: javascript
+  code: ASD
+  id: 44
+  color: hsl(238,66%,69%)
+- title: asd
+  description: 'asd '
+  language: javascript
+  code: ASD
+  id: 45
+  color: hsl(351,86%,66%)
+- title: asd
+  description: 'asd '
+  language: javascript
+  code: ASD
+  id: 46
+  color: hsl(74,66%,53%)
+- title: asd
+  description: 'asd '
+  language: javascript
+  code: ASD
+  id: 47
+  color: hsl(315,50%,67%)
+- title: asd
+  description: 'asd '
+  language: javascript
+  code: ASD
+  id: 48
+  color: hsl(66,72%,51%)
+- title: asd
+  description: 'asd '
+  language: javascript
+  code: ASD
+  id: 49
+  color: hsl(25,90%,50%)
+- title: asd
+  description: 'asd '
+  language: javascript
+  code: ASD
+  id: 50
+  color: hsl(68,92%,71%)
+- title: asd
+  description: 'asd '
+  language: javascript
+  code: ASD
+  id: 51
+  color: hsl(72,46%,52%)
+- title: asd
+  description: 'asd '
+  language: javascript
+  code: ASD
+  id: 52
+  color: hsl(13,69%,85%)
+- title: asd
+  description: 'asd '
+  language: javascript
+  code: ASD
+  id: 53
+  color: hsl(150,85%,55%)
+- title: asd
+  description: 'asd '
+  language: javascript
+  code: ASD
+  id: 54
+  color: hsl(4,78%,76%)
+- title: asd
+  description: 'asd '
+  language: javascript
+  code: ASD
+  id: 55
+  color: hsl(262,44%,78%)
+- title: asd
+  description: 'asd '
+  language: javascript
+  code: ASD
+  id: 56
+  color: hsl(316,44%,62%)
+- title: asd
+  description: 'asd '
+  language: javascript
+  code: ASD
+  id: 57
+  color: hsl(46,64%,89%)
+- title: asd
+  description: 'asd '
+  language: javascript
+  code: ASD
+  id: 58
+  color: hsl(258,75%,66%)
+- title: asd
+  description: 'asd '
+  language: javascript
+  code: ASD
+  id: 59
+  color: hsl(305,44%,49%)
+- title: asd
+  description: 'asd '
+  language: javascript
+  code: ASD
+  id: 60
+  color: hsl(223,51%,82%)
+- title: asd
+  description: 'asd '
+  language: javascript
+  code: ASD
+  id: 61
+  color: hsl(156,98%,58%)
+- title: asd
+  description: 'asd '
+  language: javascript
+  code: ASD
+  id: 62
+  color: hsl(181,83%,60%)
+- title: asd
+  description: 'asd '
+  language: javascript
+  code: ASD
+  id: 63
+  color: hsl(100,76%,54%)
+- title: asd
+  description: 'asd '
+  language: javascript
+  code: ASD
+  id: 64
+  color: hsl(328,73%,63%)
+- title: asd
+  description: 'asd '
+  language: javascript
+  code: ASD
+  id: 65
+  color: hsl(79,48%,88%)
+- title: asd
+  description: 'asd '
+  language: javascript
+  code: ASD
+  id: 66
+  color: hsl(301,79%,54%)

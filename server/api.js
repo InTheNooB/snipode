@@ -16,42 +16,42 @@ const getCodeSnippets = () => {
     }
 };
 
-const addCodeSnippet = (data) => {
+const addCodeSnippet = (newCodeSnippet) => {
     let codeSnippets = getCodeSnippets() ?? [];
 
     // Calculates the max index and adds it to the new snippet
-    data['id'] = codeSnippets.reduce((acc, current) => {
+    newCodeSnippet['id'] = codeSnippets.reduce((acc, current) => {
         return current.id > acc ? current.id : acc;
     }, 0) + 1;
 
-    data['color'] = randomColor();
+    newCodeSnippet['color'] = randomColor();
 
     // Add the snippet to the list
-    codeSnippets.push(data);
+    codeSnippets.push(newCodeSnippet);
 
     try {
         // Writes the list back into the file
         fs.writeFileSync(PATHS.CODE_SNIPPETS, yaml.dump(codeSnippets), 'utf8');
         // sendRegistrationConfirmationEmail(newTeam);
-        return true;
+        return newCodeSnippet;
     } catch (error) {
-        return false;
+        return null;
     }
 };
 
 
 const randomColor = (() => {
     const randomInt = (min, max) => {
-      return Math.floor(Math.random() * (max - min + 1)) + min;
+        return Math.floor(Math.random() * (max - min + 1)) + min;
     };
 
     return () => {
-      var h = randomInt(0, 360);
-      var s = randomInt(42, 98);
-      var l = randomInt(40, 90);
-      return `hsl(${h},${s}%,${l}%)`;
+        var h = randomInt(0, 360);
+        var s = randomInt(42, 98);
+        var l = randomInt(40, 90);
+        return `hsl(${h},${s}%,${l}%)`;
     };
-  })();
+})();
 
 
 module.exports = { getCodeSnippets, addCodeSnippet }

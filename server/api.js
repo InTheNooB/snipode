@@ -3,13 +3,24 @@ const fs = require('fs');
 
 const PATHS = {
     DATA: './data',
-    CODE_SNIPPETS: "./data/code-snippets.yaml"
+    CODE_SNIPPETS: './data/code-snippets.yaml',
+    AVAILABLE_LANGUAGES: './data/available-languages.yaml'
 }
 
 
 const getCodeSnippets = () => {
     try {
         return yaml.load(fs.readFileSync(PATHS.CODE_SNIPPETS, 'utf8'));
+    } catch (e) {
+        console.log(e);
+        return null;
+    }
+};
+
+
+const getLanguagesList = () => {
+    try {
+        return yaml.load(fs.readFileSync(PATHS.AVAILABLE_LANGUAGES, 'utf8'));
     } catch (e) {
         console.log(e);
         return null;
@@ -32,7 +43,6 @@ const addCodeSnippet = (newCodeSnippet) => {
     try {
         // Writes the list back into the file
         fs.writeFileSync(PATHS.CODE_SNIPPETS, yaml.dump(codeSnippets), 'utf8');
-        // sendRegistrationConfirmationEmail(newTeam);
         return newCodeSnippet;
     } catch (error) {
         return null;
@@ -54,4 +64,4 @@ const randomColor = (() => {
 })();
 
 
-module.exports = { getCodeSnippets, addCodeSnippet }
+module.exports = { getCodeSnippets, getLanguagesList, addCodeSnippet }

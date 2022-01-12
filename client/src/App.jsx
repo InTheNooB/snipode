@@ -3,12 +3,26 @@ import SearchBar from './components/SearchBar';
 import CodeSnippet from './components/CodeSnippet';
 import Swal from 'sweetalert2'
 import { useState, useEffect } from 'react';
+import io from 'socket.io-client';
 
 import Axios from 'axios'
 
 function App() {
 
-  const swalPopup = () => {
+
+  useEffect(() => {
+    const socket = io(`:3002`);
+    socket.on('newCodeSnippet', (codeSnippets) => {
+      setCodeSnippets(codeSnippets);
+    });
+    return () => socket.close();
+  }, []);
+
+
+  const swalPopup = (languagesList) => {
+    let optionsTag = languagesList.reduce((acc, curr) => {
+      return acc += `<option value="${curr.value}">${curr.displayName}</option>`;
+    }, '');
     return Swal.fire({
       title: 'Add code snippet',
       html:
@@ -16,18 +30,7 @@ function App() {
         <input class="swal2-input" id="swal-input-title" placeholder="Title" type="text">
         <input class="swal2-input" id="swal-input-description" placeholder="Description" type="text">
         <select class="swal2-select" id="swal-input-language">
-          <option value="" disabled="">Select a language</option>
-          <option value="javascript">JavaScript</option>
-          <option value="php">PHP</option>
-          <option value="html">HTML</option>
-          <option value="css">CSS</option>
-          <option value="java">Java</option>
-          <option value="python">Python</option>
-          <option value="c">C</option>
-          <option value="cplusplus">C++</option>
-          <option value="csharp">C#</option>
-          <option value="go">GO</option>
-          <option value="">Not in the list</option>
+        ${optionsTag}
         </select>
         <textarea aria-label="Your code here..." class="swal2-textarea" placeholder="Your code here..." id="swal-input-code"></textarea>
         `,
@@ -46,15 +49,20 @@ function App() {
   const [codeSnippets, setCodeSnippets] = useState([]);
 
   const addCodeSnippet = async () => {
-    let data = await swalPopup();
-    if (!data.value.title || !data.value.language || !data.value.code) {
-      return;
-    }
-    Axios.post("/api/addCodeSnippet", data.value).then((res) => {
-      if (res.data.result === "OK" && res.data.codeSnippets) {
-        setCodeSnippets(res.data.codeSnippets);
+    let languagesListAPIResponse = await fetch('/api/getLanguagesList').then(res => res.json());
+    if (languagesListAPIResponse.result === 'OK') {
+      let data = await swalPopup(languagesListAPIResponse.languagesList);
+      if (!data.value.title || !data.value.language || !data.value.code) {
+        return;
       }
-    });
+      Axios.post("/api/addCodeSnippet", data.value).then((res) => {
+        if (res.data.result === "OK" && res.data.codeSnippets) {
+          setCodeSnippets(res.data.codeSnippets);
+        }
+      });
+    } else {
+      console.log('ERROR');
+    }
   }
 
 

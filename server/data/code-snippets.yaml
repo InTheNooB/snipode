@@ -621,3 +621,270 @@
   code: ASD
   id: 66
   color: hsl(301,79%,54%)
+- title: Android
+  description: Android
+  language: android
+  code: Android
+  id: 67
+  color: hsl(298,90%,79%)
+- title: New snippet
+  description: New snippet
+  language: java
+  code: public static final main(String[] args) {}
+  id: 68
+  color: hsl(115,75%,57%)
+- title: New Snippet
+  description: New Snippet
+  language: javascript
+  code: let a = 2;
+  id: 69
+  color: hsl(71,64%,57%)
+- title: Nouveau Snippet
+  description: Voici la description
+  language: javascript
+  code: |-
+    let a = 2;
+    let b = a;
+    console.log(a===b?1:2);
+  id: 70
+  color: hsl(291,48%,41%)
+- title: asd
+  description: asd
+  language: javascript
+  code: asd
+  id: 71
+  color: hsl(164,79%,54%)
+- title: react
+  description: react
+  language: react
+  code: asdasd
+  id: 72
+  color: hsl(107,78%,63%)
+- title: Test
+  description: Test
+  language: python
+  code: |-
+    def split(list_a, chunk_size):
+
+      for i in range(0, len(list_a), chunk_size):
+        yield list_a[i:i + chunk_size]
+
+    chunk_size = 2
+    my_list = [1,2,3,4,5,6,7,8,9]
+    print(list(split(my_list, chunk_size)))
+  id: 73
+  color: hsl(236,59%,40%)
+- title: Test css
+  description: Test css
+  language: css
+  code: |-
+    body {
+        padding-left: 11em;
+        font-family: Georgia, "Times New Roman",
+              Times, serif;
+        color: purple;
+        background-color: #d8da3d }
+      ul.navbar {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        position: absolute;
+        top: 2em;
+        left: 1em;
+        width: 9em }
+      h1 {
+        font-family: Helvetica, Geneva, Arial,
+              SunSans-Regular, sans-serif }
+      ul.navbar li {
+        background: white;
+        margin: 0.5em 0;
+        padding: 0.3em;
+        border-right: 1em solid black }
+      ul.navbar a {
+        text-decoration: none }
+      a:link {
+        color: blue }
+      a:visited {
+        color: purple }
+  id: 74
+  color: hsl(322,53%,77%)
+- title: Pwthon
+  description: Sert sfdgdfgur
+  language: python
+  code: |
+    class Attendee
+      def initialize(height)
+        @height = height
+      end
+
+      def issue_pass!(pass_id)
+        @pass_id = pass_id
+      end
+
+      def revoke_pass!
+        @pass_id = nil
+      end
+
+      # Do not edit above methods, add your own methods below. # Do not edit above methods, add your own methods below. # Do not edit above methods, add your own methods below. # Do not edit above methods, add your own methods below. # Do not edit above methods, add your own methods below. # Do not edit above methods, add your own methods below.
+
+      # rubocop:disable Naming/PredicateName
+      def has_pass?
+        raise 'Please implement the Attendee#haspass? method'
+      end
+      # rubocop:enable Naming/PredicateName
+
+      def fits_ride?(ride_minimum_height)
+        raise 'Please implement the Attendee#fits_ride? method'
+      end
+
+      def allowed_to_ride?(ride_minimum_height)
+        raise 'Please implement the Attendee#allowed_to_ride? method'
+      end
+    end
+  id: 75
+  color: hsl(43,79%,51%)
+- title: titre
+  description: null
+  language: javascript
+  code: newCodeSnippetCode
+  id: 76
+  color: hsl(197,77%,62%)
+- title: title
+  description: description
+  language: java
+  code: public void function(int a){}
+  id: 77
+  color: hsl(170,42%,88%)
+- title: 'asd '
+  description: 'asd '
+  language: nodejs
+  code: asd
+  id: 78
+  color: hsl(44,75%,61%)
+- title: ',on code'
+  description: Stackoverflow
+  language: cplusplus
+  code: setNewCodeSnippetTitle
+  id: 79
+  color: hsl(183,44%,81%)
+- title: ',on code'
+  description: Stackoverflow
+  language: cplusplus
+  code: setNewCodeSnippetLanguage
+  id: 80
+  color: hsl(129,44%,76%)
+- title: temp
+  description: null
+  language: java
+  code: public void function(int a){}
+  id: 81
+  color: hsl(281,63%,89%)
+- title: Code
+  description: null
+  language: javascript
+  code: showAddedCodeSnippetToast
+  id: 82
+  color: hsl(56,78%,72%)
+- title: Habsburg
+  description: Des riTonp
+  language: html
+  code: |
+    public class Factorial {
+
+        public static void main(String[] args) {
+            int num = 6;
+            long factorial = multiplyNumbers(num);
+            System.out.println("Factorial of " + num + " = " + factorial);
+        }
+        public static long multiplyNumbers(int num)
+        {
+            if (num >= 1)
+                return num * multiplyNumbers(num - 1);
+            else
+                return 1;
+        }
+    }
+  id: 83
+  color: hsl(360,65%,69%)
+- title: Jsvsbs
+  description: ''
+  language: php
+  code: |
+    class Attendee
+      def initialize(height)
+        @height = height
+      end
+
+      def issue_pass!(pass_id)
+        @pass_id = pass_id
+      end
+
+      def revoke_pass!
+        @pass_id = nil
+      end
+
+      # Do not edit above methods, add your own methods below. # Do not edit above methods, add your own methods below. # Do not edit above methods, add your own methods below. # Do not edit above methods, add your own methods below. # Do not edit above methods, add your own methods below. # Do not edit above methods, add your own methods below.
+
+      # rubocop:disable Naming/PredicateName
+      def has_pass?
+        raise 'Please implement the Attendee#haspass? method'
+      end
+      # rubocop:enable Naming/PredicateName
+
+      def fits_ride?(ride_minimum_height)
+        raise 'Please implement the Attendee#fits_ride? method'
+      end
+
+      def allowed_to_ride?(ride_minimum_height)
+        raise 'Please implement the Attendee#allowed_to_ride? method'
+      end
+    end
+  id: 84
+  color: hsl(70,93%,64%)
+- title: jhg
+  description: tfd
+  language: javascript
+  code: ztu
+  id: 85
+  color: hsl(202,51%,54%)
+- title: asdasd
+  description: asdasd
+  language: csharp
+  code: |
+    class Attendee
+      def initialize(height)
+        @height = height
+      end
+
+      def issue_pass!(pass_id)
+        @pass_id = pass_id
+      end
+
+      def revoke_pass!
+        @pass_id = nil
+      end
+
+      # Do not edit above methods, add your own methods below. # Do not edit above methods, add your own methods below. # Do not edit above methods, add your own methods below. # Do not edit above methods, add your own methods below. # Do not edit above methods, add your own methods below. # Do not edit above methods, add your own methods below.
+
+      # rubocop:disable Naming/PredicateName
+      def has_pass?
+        raise 'Please implement the Attendee#haspass? method'
+      end
+      # rubocop:enable Naming/PredicateName
+
+      def fits_ride?(ride_minimum_height)
+        raise 'Please implement the Attendee#fits_ride? method'
+      end
+
+      def allowed_to_ride?(ride_minimum_height)
+        raise 'Please implement the Attendee#allowed_to_ride? method'
+      end
+    end
+  id: 86
+  color: hsl(298,49%,83%)
+- title: asd
+  description: asd
+  language: javascript
+  code: as
+  id: 87
+  color: hsl(205,53%,59%)

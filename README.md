@@ -1,8 +1,9 @@
 #  Snipode
 
 Snipode *`Snippet Code`* is a web plateform that allows visitors to access and store code snippets.
+<p align="center">
 ![name](https://i.ibb.co/7QyPKV8/Capture-d-cran-2022-01-09-172122.png)
-
+</p>
 ## Installation
 Build the react project using the command  
 ```bash
